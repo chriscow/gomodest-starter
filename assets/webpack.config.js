@@ -59,23 +59,24 @@ module.exports = {
                     env === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
                     'css-loader'
                 ]
-            },
-            {
-                test: /\.scss$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader'
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: true,
-                            // options...
-                        }
-                    }
-                ]
             }]
+            // ,
+            // {
+            //     test: /\.scss$/,
+            //     use: [
+            //         MiniCssExtractPlugin.loader,
+            //         {
+            //             loader: 'css-loader'
+            //         },
+            //         {
+            //             loader: 'sass-loader',
+            //             options: {
+            //                 sourceMap: true,
+            //                 // options...
+            //             }
+            //         }
+            //     ]
+            // }]
     },
     plugins: [
         new MiniCssExtractPlugin({

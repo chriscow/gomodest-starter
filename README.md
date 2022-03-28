@@ -22,12 +22,34 @@ A few things which were used:
 
 Many more things in `go.mod` & `web/package.json`
 
-To run, clone this repo and: 
+Running
+======
+
+Copy the sample env.development to .env.  Edit the .env file with your development settings:
+
+Settings
+-----
+
+Configure [Sign in with Google](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid) by creating an OAuth consent screen and an OAuth client.
+Put the values of APP_GOOGLE_CLIENT_ID and APP_GOOGLE_SECRET from the creation of
+the OAuth client.
+
+Configure the SMTP account settings.  If you are using GMail use these values:
+>> APP_SMTP_HOST=smtp.gmail.com
+>> APP_SMTP_PORT=587
+
+Set the APP_PLANS_FILE value to the sample `plans.development.json` file.
+
+
+
+To run, clone this repo and edit the values in `env.development`
 
 ```bash
-$ make install
-# another terminal
-$ make run-go
+# terminal 1
+$ cd assets && npm install && npm run watch
+
+# terminal 2
+$ go run main.co --config env.development
 ```
 
 The ideas in this starter kit follow the JS gradient as noted [here](https://modestjs.works/book/part-2/the-js-gradient/). I have taken the liberty to organise them into the following big blocks: **server-rendered html**, **sprinkles** and **spots**.
